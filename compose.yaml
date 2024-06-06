@@ -1,9 +1,9 @@
 services:
-  postgres:
+  database:
     image: 'postgres:latest'
     environment:
-      - POSTGRES_DB=wealthwave_db
-      - POSTGRES_PASSWORD=mypass@
-      - POSTGRES_USER=admin
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
     ports:
       - '5432:5432'
