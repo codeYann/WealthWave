@@ -19,4 +19,9 @@ public class Countries implements Serializable {
    
     @Column(length = 100, nullable = false)
     private String name;
+
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
 }
