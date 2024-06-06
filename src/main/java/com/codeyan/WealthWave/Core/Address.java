@@ -27,6 +27,10 @@ public class Address implements Serializable {
     @Column(nullable = false)
     private String locality;
 
+    @OneToOne
+    @JoinColumn(name = "country_id")
+    private Countries countries;
+
     @Column(length = 20, nullable = false)
     private String postalCode;
 
@@ -35,6 +39,10 @@ public class Address implements Serializable {
 
     @Column(length = 10, nullable = true)
     private String suit;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private Users users;
 
     @CreationTimestamp
     private Date createdAt;
