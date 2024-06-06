@@ -44,6 +44,10 @@ public class Users implements Serializable {
     @Column(nullable = false)
     private String password;
 
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
     @CreationTimestamp
     private Date createdAt;
 
