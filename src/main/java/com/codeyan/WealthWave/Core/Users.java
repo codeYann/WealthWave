@@ -48,8 +48,18 @@ public class Users implements Serializable {
     @JoinColumn(name = "address_id")
     private Address address;
 
+    @OneToOne
+    @JoinColumn(name = "individual_account_id")
+    private IndividualAccount individualAccount;
+
+    @OneToOne
+    @JoinColumn(name = "business_account_id")
+    private BusinessAccount businessAccount;
+
     @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Date createdAt;
 
+    @Column(name = "updated_at")
     private Date updatedAt;
 }
