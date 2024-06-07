@@ -12,11 +12,11 @@ import lombok.Setter;
 @Setter
 public class Countries implements Serializable {
     private static long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-   
+
     @Column(length = 100, nullable = false)
     private String name;
 
