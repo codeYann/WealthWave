@@ -2,7 +2,7 @@ package com.codeyan.WealthWave.Core;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.util.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -46,6 +46,9 @@ public class Wallet implements Serializable {
   @CreationTimestamp
   @Column(name = "created_at", nullable = false, updatable = false)
   private Date createdAt;
+
+  @OneToMany(mappedBy = "wallet")
+  private List<DebitTransaction> debitTransactions;
 
   @Column(name = "updated_at")
   private Date updatedAt;
