@@ -1,5 +1,10 @@
-package com.codeyan.WealthWave.Core;
+package com.codeyan.WealthWave.Core.Wallet;
 
+import com.codeyan.WealthWave.Core.Account.AccountStatus;
+import com.codeyan.WealthWave.Core.Account.BusinessAccount;
+import com.codeyan.WealthWave.Core.Account.IndividualAccount;
+import com.codeyan.WealthWave.Core.Transactions.CreditTransaction;
+import com.codeyan.WealthWave.Core.Transactions.DebitTransaction;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.*;
@@ -49,6 +54,9 @@ public class Wallet implements Serializable {
 
   @OneToMany(mappedBy = "wallet")
   private List<DebitTransaction> debitTransactions;
+
+  @OneToMany(mappedBy = "wallet")
+  private List<CreditTransaction> creditTransactions;
 
   @Column(name = "updated_at")
   private Date updatedAt;
