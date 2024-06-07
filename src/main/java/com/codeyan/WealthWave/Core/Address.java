@@ -34,10 +34,10 @@ public class Address implements Serializable {
     @Column(length = 20, nullable = false)
     private String postalCode;
 
-    @Column(length = 10, nullable = true)
+    @Column(length = 10)
     private String apartmentNumber;
 
-    @Column(length = 10, nullable = true)
+    @Column(length = 10)
     private String suit;
 
     @OneToOne
@@ -45,6 +45,7 @@ public class Address implements Serializable {
     private Users users;
 
     @CreationTimestamp
+    @Column(nullable = false, updatable = false)
     private Date createdAt;
 
     private Date updatedAt;
