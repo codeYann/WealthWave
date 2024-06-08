@@ -7,6 +7,7 @@ import com.codeyan.WealthWave.Core.Transactions.CreditTransaction;
 import com.codeyan.WealthWave.Core.Transactions.DebitTransaction;
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,10 +25,10 @@ public class Wallet implements Serializable {
   private long id;
 
   @Column(nullable = false)
-  private long balanceCents;
+  private BigDecimal balanceCents;
 
   @Column(nullable = false)
-  private long creditLimitCents;
+  private BigDecimal creditLimitCents;
 
   @Column(length = 10, nullable = false)
   private String currency;
