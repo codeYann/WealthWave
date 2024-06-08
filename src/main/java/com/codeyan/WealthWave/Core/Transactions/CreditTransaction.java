@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.*;
 
 @Entity
@@ -28,7 +29,7 @@ public class CreditTransaction implements Serializable {
     private Wallet wallet;
 
     @Column(nullable = false)
-    private long amountCents;
+    private BigDecimal amountCents;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
