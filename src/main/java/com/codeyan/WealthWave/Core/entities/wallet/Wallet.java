@@ -1,10 +1,10 @@
-package com.codeyan.WealthWave.Core.Wallet;
+package com.codeyan.WealthWave.Core.entities.wallet;
 
-import com.codeyan.WealthWave.Core.Account.AccountStatus;
-import com.codeyan.WealthWave.Core.Account.BusinessAccount;
-import com.codeyan.WealthWave.Core.Account.IndividualAccount;
-import com.codeyan.WealthWave.Core.Transactions.CreditTransaction;
-import com.codeyan.WealthWave.Core.Transactions.DebitTransaction;
+import com.codeyan.WealthWave.Core.entities.account.AccountStatus;
+import com.codeyan.WealthWave.Core.entities.account.BusinessAccount;
+import com.codeyan.WealthWave.Core.entities.account.IndividualAccount;
+import com.codeyan.WealthWave.Core.entities.transaction.CreditTransaction;
+import com.codeyan.WealthWave.Core.entities.transaction.DebitTransaction;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
