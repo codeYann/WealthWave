@@ -1,4 +1,4 @@
-package com.codeyan.WealthWave.Core.Address;
+package com.codeyan.WealthWave.Core.entities.address;
 
 import java.io.Serializable;
 

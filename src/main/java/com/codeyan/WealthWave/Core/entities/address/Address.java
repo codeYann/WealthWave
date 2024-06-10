@@ -1,6 +1,6 @@
-package com.codeyan.WealthWave.Core.Address;
+package com.codeyan.WealthWave.Core.entities.address;
 
-import com.codeyan.WealthWave.Core.Users.Users;
+import com.codeyan.WealthWave.Core.entities.user.User;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -43,7 +43,7 @@ public class Address implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    private Users users;
+    private User user;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
