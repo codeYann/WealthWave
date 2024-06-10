@@ -1,4 +1,4 @@
-package com.codeyan.WealthWave.Core.entities.users;
+package com.codeyan.WealthWave.Core.entities.user;
 
 import com.codeyan.WealthWave.Core.entities.account.BusinessAccount;
 import com.codeyan.WealthWave.Core.entities.account.IndividualAccount;
@@ -15,7 +15,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @Table(name = "users")
 @Getter
 @Setter
-public class Users implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
