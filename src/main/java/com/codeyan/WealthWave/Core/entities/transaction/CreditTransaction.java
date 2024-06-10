@@ -1,4 +1,4 @@
-package com.codeyan.WealthWave.Core.entities.transactions;
+package com.codeyan.WealthWave.Core.entities.transaction;
 
 import com.codeyan.WealthWave.Core.entities.wallet.Wallet;
 import jakarta.persistence.*;

@@ -1,4 +1,4 @@
-package com.codeyan.WealthWave.Core.entities.transactions;
+package com.codeyan.WealthWave.Core.entities.transaction;
 
 public enum PaymentType {
     DEBIT, CREDIT
