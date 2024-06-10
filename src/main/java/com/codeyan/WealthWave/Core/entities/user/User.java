@@ -1,8 +1,8 @@
-package com.codeyan.WealthWave.Core.Users;
+package com.codeyan.WealthWave.Core.entities.users;
 
-import com.codeyan.WealthWave.Core.Account.BusinessAccount;
-import com.codeyan.WealthWave.Core.Account.IndividualAccount;
-import com.codeyan.WealthWave.Core.Address.Address;
+import com.codeyan.WealthWave.Core.entities.account.BusinessAccount;
+import com.codeyan.WealthWave.Core.entities.account.IndividualAccount;
+import com.codeyan.WealthWave.Core.entities.address.Address;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Date;

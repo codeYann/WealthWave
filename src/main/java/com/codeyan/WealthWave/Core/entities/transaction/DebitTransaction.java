@@ -1,6 +1,6 @@
-package com.codeyan.WealthWave.Core.Transactions;
+package com.codeyan.WealthWave.Core.entities.transactions;
 
-import com.codeyan.WealthWave.Core.Wallet.Wallet;
+import com.codeyan.WealthWave.Core.entities.wallet.Wallet;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,10 +11,10 @@ import java.math.BigDecimal;
 import java.util.*;
 
 @Entity
-@Table(name = "credit_transaction")
+@Table(name = "debit_transaction")
 @Getter
 @Setter
-public class CreditTransaction implements Serializable {
+public class DebitTransaction implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -39,11 +39,10 @@ public class CreditTransaction implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "to_vendor_wallet_id")
-    private Wallet toVendorWalletId;
+    @JoinColumn(name = "to_wallet_id")
+    private Wallet toWalletId;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private Date createdAt;
 }
-
