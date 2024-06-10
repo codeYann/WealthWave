@@ -1,7 +1,7 @@
-package com.codeyan.WealthWave.Core.Account;
+package com.codeyan.WealthWave.Core.entities.account;
 
-import com.codeyan.WealthWave.Core.Users.Users;
-import com.codeyan.WealthWave.Core.Wallet.Wallet;
+import com.codeyan.WealthWave.Core.entities.user.User;
+import com.codeyan.WealthWave.Core.entities.wallet.Wallet;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.*;
@@ -43,7 +43,7 @@ public class BusinessAccount implements Serializable {
 
   @OneToOne
   @JoinColumn(unique = true, name = "user_id")
-  private Users user;
+  private User user;
 
   @CreationTimestamp
   @Column(name = "created_at", nullable = false, updatable = false)
