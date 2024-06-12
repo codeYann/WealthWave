@@ -1,14 +1,15 @@
-package com.codeyan.WealthWave.Core.entities.user;
+package com.codeyan.WealthWave.core.entities.user;
 
-import com.codeyan.WealthWave.Core.entities.account.BusinessAccount;
-import com.codeyan.WealthWave.Core.entities.account.IndividualAccount;
-import com.codeyan.WealthWave.Core.entities.address.Address;
-import com.codeyan.WealthWave.Core.exceptions.InvalidUserDataException;
+import com.codeyan.WealthWave.core.entities.account.BusinessAccount;
+import com.codeyan.WealthWave.core.entities.account.IndividualAccount;
+import com.codeyan.WealthWave.core.entities.address.Address;
+import com.codeyan.WealthWave.core.exceptions.InvalidUserDataException;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
@@ -22,6 +23,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Setter
     @Column(unique = true, nullable = false)
     private UUID publicId;
 
@@ -84,7 +86,7 @@ public class User implements Serializable {
         setPhone(phone);
         setEmail(email);
         setPassword(password);
-        this.publicId = UUID.randomUUID();
+        setPublicId(UUID.randomUUID());
     }
 
     private void checkIfNullOrEmpty(String value, String message) throws InvalidUserDataException {
