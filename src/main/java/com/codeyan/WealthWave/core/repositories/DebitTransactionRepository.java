@@ -1,6 +1,6 @@
-package com.codeyan.WealthWave.Core.repositories;
+package com.codeyan.WealthWave.core.repositories;
 
-import com.codeyan.WealthWave.Core.entities.transaction.DebitTransaction;
+import com.codeyan.WealthWave.core.entities.transaction.DebitTransaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DebitTransactionRepository

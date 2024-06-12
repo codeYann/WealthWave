@@ -1,6 +1,6 @@
-package com.codeyan.WealthWave.Core.repositories;
+package com.codeyan.WealthWave.core.repositories;
 
-import com.codeyan.WealthWave.Core.entities.account.BusinessAccount;
+import com.codeyan.WealthWave.core.entities.account.BusinessAccount;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BusinessAccountRepository

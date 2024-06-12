@@ -1,6 +1,6 @@
-package com.codeyan.WealthWave.Core.repositories;
+package com.codeyan.WealthWave.core.repositories;
 
-import com.codeyan.WealthWave.Core.entities.user.User;
+import com.codeyan.WealthWave.core.entities.user.User;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
