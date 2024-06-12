@@ -10,7 +10,7 @@ import lombok.Setter;
 @Table(name = "countries")
 @Getter
 @Setter
-public class Countries implements Serializable {
+public class Country implements Serializable {
     private static long serialVersionUID = 1L;
 
     @Id
