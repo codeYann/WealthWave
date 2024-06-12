@@ -1,7 +1,8 @@
-package com.codeyan.WealthWave.Core.entities.account;
+package com.codeyan.WealthWave.core.entities.account;
 
-import com.codeyan.WealthWave.Core.entities.user.User;
-import com.codeyan.WealthWave.Core.entities.wallet.Wallet;
+import com.codeyan.WealthWave.core.entities.user.User;
+import com.codeyan.WealthWave.core.entities.wallet.Wallet;
+import com.codeyan.WealthWave.core.exceptions.InvalidAccountDataException;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.*;
@@ -12,7 +13,6 @@ import org.hibernate.annotations.CreationTimestamp;
 @Entity
 @Table(name = "individual_account")
 @Getter
-@Setter
 public class IndividualAccount implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -20,6 +20,7 @@ public class IndividualAccount implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
+  @Setter
   @Column(unique = true, nullable = false)
   private UUID publicId;
 
@@ -48,4 +49,51 @@ public class IndividualAccount implements Serializable {
 
   @Column(name = "updated_at")
   private Date updatedAt;
+
+  public IndividualAccount() {
+
+  }
+
+  public IndividualAccount(String cpf, Wallet wallet) {
+    setPublicId(UUID.randomUUID());
+    setAccountType(AccountType.PAYMENT);
+    setStatus(AccountStatus.ACTIVE);
+    setCpf(cpf);
+    setWallet(wallet);
+  }
+
+  public void setAccountType(AccountType accountType) {
+    if (accountType == null) {
+      throw new InvalidAccountDataException("accountType is null");
+    }
+    this.accountType = accountType;
+  }
+
+  public void setStatus(AccountStatus status) {
+    if (status == null) {
+      throw new InvalidAccountDataException("accountStatus is null");
+    }
+    this.status = status;
+  }
+
+  public void setCpf(String cpf) {
+    if (cpf == null || cpf.length() != 11) {
+      throw new InvalidAccountDataException("CPF should be 11 digits");
+    }
+    this.cpf = cpf;
+  }
+
+  public void setWallet(Wallet wallet) {
+    if (wallet == null) {
+      throw new InvalidAccountDataException("wallet is null");
+    }
+    this.wallet = wallet;
+  }
+
+  public void setUser(User user) {
+    if (user == null) {
+      throw new InvalidAccountDataException("user is null");
+    }
+    this.user = user;
+  }
 }
