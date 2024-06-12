@@ -1,7 +1,7 @@
-package com.codeyan.WealthWave.Core.entities.address;
+package com.codeyan.WealthWave.core.entities.address;
 
-import com.codeyan.WealthWave.Core.entities.user.User;
-import com.codeyan.WealthWave.Core.exceptions.InvalidAddressDataException;
+import com.codeyan.WealthWave.core.entities.user.User;
+import com.codeyan.WealthWave.core.exceptions.InvalidAddressDataException;
 import jakarta.persistence.*;
 
 import java.io.Serial;

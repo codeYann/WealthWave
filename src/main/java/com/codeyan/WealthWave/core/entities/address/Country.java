@@ -1,7 +1,8 @@
-package com.codeyan.WealthWave.Core.entities.address;
+package com.codeyan.WealthWave.core.entities.address;
 
 import java.io.Serializable;
 
+import com.codeyan.WealthWave.core.exceptions.InvalidAddressDataException;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +10,6 @@ import lombok.Setter;
 @Entity
 @Table(name = "countries")
 @Getter
-@Setter
 public class Country implements Serializable {
     private static long serialVersionUID = 1L;
 
@@ -23,5 +23,13 @@ public class Country implements Serializable {
     @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
+
+    public Country(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new InvalidAddressDataException("Country name is null or empty");
+        }
+
+        this.name = name;
+    }
 
 }
