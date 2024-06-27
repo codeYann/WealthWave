@@ -59,3 +59,8 @@ replay_pid*
 
 ### Docker volume ###
 pg-data
+
+## .env
+
+.env
+.env.*
