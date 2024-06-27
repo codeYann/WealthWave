@@ -11,6 +11,5 @@ public interface AddressRepository extends JpaRepository<Address, Long> {
 
     Address save(Address address);
 
-    Boolean existsCountryByName(String country);
-    Country saveCountries(String country);
+    Country findByCountryName(String country);
 }
