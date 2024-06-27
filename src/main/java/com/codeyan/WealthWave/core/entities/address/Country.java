@@ -5,7 +5,6 @@ import java.io.Serializable;
 import com.codeyan.WealthWave.core.exceptions.InvalidAddressDataException;
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Table(name = "countries")
